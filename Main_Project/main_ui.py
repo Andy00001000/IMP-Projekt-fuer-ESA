@@ -34,7 +34,7 @@ class ClockLabel(ctk.CTkLabel):
         self.configure(text=current_time)
         self.after(1000, self.update_time)
 
-
+#test
 
 
 
