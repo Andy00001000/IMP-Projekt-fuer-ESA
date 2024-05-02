@@ -5,18 +5,20 @@ import datetime
 import tkinter as tk
 
 
+
+
 def button_callback():
-    import calculator
+    import RocketSim
     root.destroy()
-    calculator.calculator_main()
+    RocketSim.RocketSim_main()
 
 root = ctk.CTk()
 root.geometry("400x150")
-root.title("Launcher")
+root.title("Main Menu")
 
 
 clock = ctk.CTkLabel(root, text="")
-button = ctk.CTkButton(root, text="Open Calculator", command=button_callback)
+button = ctk.CTkButton(root, text="RocketSim", command=button_callback)
 
 
 
@@ -43,3 +45,4 @@ root.clock_label = ClockLabel(root)
 button.pack(padx=20, pady=20)
 root.clock_label.pack(anchor='center', pady=20)
 root.mainloop()
+

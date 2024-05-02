@@ -5,7 +5,7 @@ def RocketSim_main():
     def button_callback():
         print("button clicked")
         app2.destroy()
-        import main_ui
+        import Main_Project.Tests.main_ui_old as main_ui_old
 
     app2 = ctk.CTk()
     app2.geometry("400x150")
