@@ -28,8 +28,8 @@ def calculator_main():
     calcapp.geometry("400x150")
 
 
-    Tmax_label = ctk.CTkLabel(calcapp, text="Tmax:")
-    Tmax_label.grid(row=0, column=0)
+    dp_label = ctk.CTkLabel(calcapp, text="Delta :")
+    dp_label.grid(row=0, column=0)
     Tmax_entry = ctk.CTkEntry(calcapp)
     Tmax_entry.grid(row=0, column=1)
 
@@ -73,12 +73,12 @@ def calculator_main():
 
 
     button = ctk.CTkButton(calcapp, text="Home", command=button_callback)
-    calcbutton = ctk.CTkButton(calcapp, tetx="Calculate", command=calculate_button)
+    calcbutton = ctk.CTkButton(calcapp, text="Calculate", command=calculate_button)
 
 
 
-    calculate_button.pack(padx=20, pady=20)
-    button.pack(padx=20, pady=20, side="bottom")
+    calcbutton.grid(row = 8, column=1)
+    button.grid(row = 9, column=1)
 
     calcapp.mainloop()
 
