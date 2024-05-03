@@ -28,10 +28,10 @@ def calculator_main():
     calcapp.geometry("400x150")
 
 
-    dp_label = ctk.CTkLabel(calcapp, text="Delta :")
+    dp_label = ctk.CTkLabel(calcapp, text="Delta impuls:") #delta impuls
     dp_label.grid(row=0, column=0)
-    Tmax_entry = ctk.CTkEntry(calcapp)
-    Tmax_entry.grid(row=0, column=1)
+    dp_entry = ctk.CTkEntry(calcapp)
+    dp_entry.grid(row=0, column=1)
 
     dt_label = ctk.CTkLabel(calcapp, text="dt:")
     dt_label.grid(row=1, column=0)
