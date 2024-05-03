@@ -53,62 +53,73 @@ def calculator_main():
     cw_entry = ctk.CTkEntry(calcapp)
     cw_entry.grid(row=4, column=1)
 
-    cw_label = ctk.CTkLabel(calcapp, text="cw:")
-    cw_label.grid(row=5, column=0)
-    cw_entry = ctk.CTkEntry(calcapp)
-    cw_entry.grid(row=5, column=1)
-
     p_label = ctk.CTkLabel(calcapp, text="Luftdichte:") #Luftdichte
-    p_label.grid(row=6, column=0)
+    p_label.grid(row=5, column=0)
     p_entry = ctk.CTkEntry(calcapp)
-    p_entry.grid(row=6, column=1)
+    p_entry.grid(row=5, column=1)
 
     A_label = ctk.CTkLabel(calcapp, text="Frontfläche:") #Frontfläche
-    A_label.grid(row=8, column=0)
+    A_label.grid(row=6, column=0)
     A_entry = ctk.CTkEntry(calcapp)
-    A_entry.grid(row=8, column=1)
+    A_entry.grid(row=6, column=1)
 
     v_label = ctk.CTkLabel(calcapp, text="Geschwindigkeit:") #Geschwindigkeit
-    v_label.grid(row=9, column=0)
+    v_label.grid(row=7, column=0)
     v_entry = ctk.CTkEntry(calcapp)
-    v_entry.grid(row=9, column=1)
+    v_entry.grid(row=7, column=1)
 
     h_label = ctk.CTkLabel(calcapp, text="Höhe:") #Höhe
-    h_label.grid(row=10, column=0)
+    h_label.grid(row=8, column=0)
     h_entry = ctk.CTkEntry(calcapp)
-    h_entry.grid(row=10, column=1)
+    h_entry.grid(row=8, column=1)
 
     p0_label = ctk.CTkLabel(calcapp, text="Luftdichte:") #Luftdichte auf Meereshöhe
-    p0_label.grid(row=11, column=0)
+    p0_label.grid(row=9, column=0)
     p0_entry = ctk.CTkEntry(calcapp)
-    p0_entry.grid(row=11, column=1)
+    p0_entry.grid(row=9, column=1)
 
     g_label = ctk.CTkLabel(calcapp, text="Erdbeschleunigung:") #Erdbeschleunigung
-    g_label.grid(row=12, column=0)
+    g_label.grid(row=10, column=0)
     g_entry = ctk.CTkEntry(calcapp)
-    g_entry.grid(row=12, column=1)
+    g_entry.grid(row=10, column=1)
 
     M_label = ctk.CTkLabel(calcapp, text="Die mittlere molare Masse der Luft:") #M die mittlere molare Masse der Luft
-    M_label.grid(row=13, column=0)
+    M_label.grid(row=11, column=0)
     M_entry = ctk.CTkEntry(calcapp)
-    M_entry.grid(row=13, column=1)
+    M_entry.grid(row=11, column=1)
 
-    _label = ctk.CTkLabel(calcapp, text=":") #
-    _label.grid(row=13, column=0)
-    _entry = ctk.CTkEntry(calcapp)
-    _entry.grid(row=13, column=1)
+    R_label = ctk.CTkLabel(calcapp, text="Die allgemeine Gaskonstante:") #die allgemeine Gaskonstante
+    R_label.grid(row=12, column=0)
+    R_entry = ctk.CTkEntry(calcapp)
+    R_entry.grid(row=12, column=1)
 
+    varm_label = ctk.CTkLabel(calcapp, text="Geschwindigkeit:") #Geschwindigkeit von Armstrong
+    varm_label.grid(row=13, column=0)
+    varm_entry = ctk.CTkEntry(calcapp)
+    varm_entry.grid(row=13, column=1)
 
+    T_label = ctk.CTkLabel(calcapp, text="Temperatur der Luft:") #Temperatur der Luft
+    T_label.grid(row=14, column=0)
+    T_entry = ctk.CTkEntry(calcapp)
+    T_entry.grid(row=14, column=1)
 
+    a_label = ctk.CTkLabel(calcapp, text="Beschleunigung:") #Beschleunigung
+    a_label.grid(row=15, column=0)
+    a_entry = ctk.CTkEntry(calcapp)
+    a_entry.grid(row=15, column=1)
 
+    s_label = ctk.CTkLabel(calcapp, text="Zurückgelegte Strecke:") #Zurückgelegte Strecke s
+    s_label.grid(row=16, column=0)
+    s_entry = ctk.CTkEntry(calcapp)
+    s_entry.grid(row=16, column=1)
 
     button = ctk.CTkButton(calcapp, text="Home", command=button_callback)
     calcbutton = ctk.CTkButton(calcapp, text="Calculate", command=calculate_button)
 
 
 
-    calcbutton.grid(row = 14, column=1)
-    button.grid(row = 15, column=1)
+    calcbutton.grid(row = 17, column=1)
+    button.grid(row = 18, column=1)
 
     calcapp.mainloop()
 
