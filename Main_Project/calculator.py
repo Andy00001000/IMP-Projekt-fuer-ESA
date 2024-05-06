@@ -27,6 +27,10 @@ def calculator_main():
     calcapp = ctk.CTk()
     calcapp.geometry("400x150")
 
+    #constants:
+    
+
+
 
     dp_label = ctk.CTkLabel(calcapp, text="Delta Impuls:") #delta impuls
     dp_label.grid(row=0, column=0)
