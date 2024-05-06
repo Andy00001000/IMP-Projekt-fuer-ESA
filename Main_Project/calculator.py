@@ -18,7 +18,7 @@ def calculator_main():
     def button_callback():
         print("button clicked")
         calcapp.destroy()
-        import Main_Project.Tests.main_ui_old as main_ui_old
+        import main_ui
 
     def calculate_button():
         print("button clicked")
