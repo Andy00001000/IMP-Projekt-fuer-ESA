@@ -3,15 +3,71 @@ import customtkinter as ctk
 import time
 import datetime
 import tkinter as tk
+import math
+
 
 
 
 def calculator_main():
     
+    def calculate_and_plot(): 
+        print("Test")
 
+        dp = float(dp_entry.get().replace(",","."))
+        ve = float(ve_entry.get().replace(",","."))
+        dm = float(dm_entry.get().replace(",","."))
+        dt = float(dt_entry.get().replace(",","."))
+        cw = float(cw_entry.get().replace(",","."))
+        p = float(p_entry.get().replace(",","."))
+        A = float(A_entry.get().replace(",","."))
+        v = float(v_entry.get().replace(",","."))
+        h = float(h_entry.get().replace(",","."))
+        p0 = float(p0_entry.get().replace(",","."))
+        g = float(g_entry.get().replace(",","."))
+        M = float(M_entry.get().replace(",","."))
+        R = float(R_entry.get().replace(",","."))
+        varm = float(varm_entry.get().replace(",","."))
+        T = float(T_entry.get().replace(",","."))
+        a = float(a_entry.get().replace(",","."))
+        s = float(s_entry.get().replace(",","."))
+        FL = float(FL_entry.get().replace(",","."))
+        F = float(F_entry.get().replace(",","."))
+        G = float(G_entry.get().replace(",","."))
+        m = float(m_entry.get().replace(",","."))
+        ME = float(ME_entry.get().replace(",","."))
+        e = float(e_entry.get().replace(",","."))
+        r = float(r_entry.get().replace(",","."))
+        ml = float(ml_entry.get().replace(",","."))
+        mN = float(mN_entry.get().replace(",","."))
+        mT = float(mT_entry.get().replace(",","."))
+        mP = float(mP_entry.get().replace(",","."))
 
+        
 
+        #I Newton
+        dp = dm * ve
 
+        #B Pascal
+
+        temp1 = -((g*M*h) / (R*T))
+
+        p = p0*pow(math.e, temp1)
+
+        FL = 1/2*cw*p*A*v*v
+
+        #W Braun
+        dmT = -mP * dt
+
+        mT = mT - dmT
+
+        m = ml + mN + mT
+
+        #Galileo Galilei
+        F = G * ((ME*m)/(r*r))
+
+        g = (G * M)/(r*r)
+
+        
 
 
 
@@ -22,6 +78,7 @@ def calculator_main():
 
     def calculate_button():
         print("button clicked")
+        calculate_and_plot()
         
 
     calcapp = ctk.CTk()
@@ -32,12 +89,17 @@ def calculator_main():
 
 
 
+
+
+
+
+
     dp_label = ctk.CTkLabel(calcapp, text="Delta Impuls:") #delta impuls
     dp_label.grid(row=0, column=0)
     dp_entry = ctk.CTkEntry(calcapp)
     dp_entry.grid(row=0, column=1)
 
-    ve_label = ctk.CTkLabel(calcapp, text="Geschwindigkeit:") #Geschwindigkeit
+    ve_label = ctk.CTkLabel(calcapp, text="Geschwindigkeit des Ausströmenden gases:") #Geschwindigkeit
     ve_label.grid(row=1, column=0)
     ve_entry = ctk.CTkEntry(calcapp)
     ve_entry.grid(row=1, column=1)
@@ -117,13 +179,70 @@ def calculator_main():
     s_entry = ctk.CTkEntry(calcapp)
     s_entry.grid(row=16, column=1)
 
+    FL_label = ctk.CTkLabel(calcapp, text="Luftwiederstand:") #Luftwiederstand
+    FL_label.grid(row=17, column=0)
+    FL_entry = ctk.CTkEntry(calcapp)
+    FL_entry.grid(row=17, column=1)
+
+    F_label = ctk.CTkLabel(calcapp, text="Gravitationskraft:") #Gravitationskraft
+    F_label.grid(row=18, column=0)
+    F_entry = ctk.CTkEntry(calcapp)
+    F_entry.grid(row=18, column=1)
+
+    G_label = ctk.CTkLabel(calcapp, text="Gravitationskonstante:") #Gravitationskonstante
+    G_label.grid(row=19, column=0)
+    G_entry = ctk.CTkEntry(calcapp)
+    G_entry.grid(row=19, column=1)
+
+    m_label = ctk.CTkLabel(calcapp, text="Masse des Objekts:") #Masse des Objekts
+    m_label.grid(row=20, column=0)
+    m_entry = ctk.CTkEntry(calcapp)
+    m_entry.grid(row=20, column=1)
+
+    ME_label = ctk.CTkLabel(calcapp, text="Masse der Erde:") #Masse der Erde
+    ME_label.grid(row=21, column=0)
+    ME_entry = ctk.CTkEntry(calcapp)
+    ME_entry.grid(row=21, column=1)
+
+    e_label = ctk.CTkLabel(calcapp, text="konstante Exponentialfunktion:") #konstante Exponentialfunktion
+    e_label.grid(row=22, column=0)
+    e_entry = ctk.CTkEntry(calcapp)
+    e_entry.grid(row=22, column=1)
+
+    r_label = ctk.CTkLabel(calcapp, text="Abstand Objekt bis Mittelpunkt zur Erde:") #Abstand Objekt bis Mittelpunkt zur Erde
+    r_label.grid(row=23, column=0)
+    r_entry = ctk.CTkEntry(calcapp)
+    r_entry.grid(row=23, column=1)
+
+    ml_label = ctk.CTkLabel(calcapp, text="Leerlaufmasse der Rakete:") #Leerlaufmasse der Rakete
+    ml_label.grid(row=24, column=0)
+    ml_entry = ctk.CTkEntry(calcapp)
+    ml_entry.grid(row=24, column=1)
+
+    mN_label = ctk.CTkLabel(calcapp, text="Nutzlastmasse:") #Nutzlastmasse
+    mN_label.grid(row=25, column=0)
+    mN_entry = ctk.CTkEntry(calcapp)
+    mN_entry.grid(row=25, column=1)
+
+    mT_label = ctk.CTkLabel(calcapp, text="Treibstoffmasse:") #Treibstoffmasse
+    mT_label.grid(row=26, column=0)
+    mT_entry = ctk.CTkEntry(calcapp)
+    mT_entry.grid(row=26, column=1)
+
+    mP_label = ctk.CTkLabel(calcapp, text="Massenfluss des Treibstoffs:") #Massenfluss des Treibstoffs
+    mP_label.grid(row=27, column=0)
+    mP_entry = ctk.CTkEntry(calcapp)
+    mP_entry.grid(row=27, column=1)
+
+    
+
     button = ctk.CTkButton(calcapp, text="Home", command=button_callback)
     calcbutton = ctk.CTkButton(calcapp, text="Calculate", command=calculate_button)
 
 
 
-    calcbutton.grid(row = 17, column=1)
-    button.grid(row = 18, column=1)
+    calcbutton.grid(row = 28, column=1)
+    button.grid(row = 29, column=1)
 
     calcapp.mainloop()
 
