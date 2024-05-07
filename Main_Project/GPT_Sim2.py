@@ -4,7 +4,7 @@ import time
 import datetime
 import tkinter as tk
 import math
-
+import numpy as np
 
 
 
@@ -79,6 +79,26 @@ def calculator_main():
         F = G * ((ME*m)/(r*r))
 
         g = (G * M)/(r*r)
+
+        def rocket_height(t, T, m, cd, A, mi):
+            def integrand1(t_prime):
+                return np.log(mi / m(t_prime))
+            def integrand2(t_prime):
+                return (g * (T(t_prime) - m(t_prime) * g)) / (2 * cd * A * rho(t_prime) * (mi - m(t_prime)))
+            
+            def height_integral1(t):
+                dt = 0.01  # Schrittweite für die numerische Integration
+                t_values = np.arange(0, t, dt)
+                integral = np.trapz(integrand1(t_values), t_values)
+                return integral
+            def height_integral2(t):
+                dt = 0.01  # Schrittweite für die numerische Integration
+                t_values = np.arange(0, t, dt)
+                integral = np.trapz(integrand2(t_values), t_values)
+                return integral
+            
+            h = (T(t) / (m(t) * g)) * height_integral1(t) - height_integral2(t)
+            return h
 
         
 
