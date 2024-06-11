@@ -6,9 +6,9 @@ import tkinter as tk
 
 
 def button_callback():
-    import calculator
+    import calculator2
     root.destroy()
-    calculator.calculator_main()
+    calculator2.calculator_main()
 
 root = ctk.CTk()
 root.geometry("400x150")
