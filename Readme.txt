@@ -1,2 +1,2 @@
-Raed this
+Read this
 

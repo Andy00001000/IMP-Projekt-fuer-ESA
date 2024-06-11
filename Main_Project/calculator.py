@@ -4,6 +4,8 @@ import time
 import datetime
 import tkinter as tk
 import math
+import numpy as np
+import matplotlib.pyplot as plt
 
 
 
@@ -22,20 +24,20 @@ def calculator_main():
         A = float(A_entry.get().replace(",","."))
         v = float(v_entry.get().replace(",","."))
         h = float(h_entry.get().replace(",","."))
-        p0 = float(p0_entry.get().replace(",","."))
-        g = float(g_entry.get().replace(",","."))
+        #p0 = float(p0_entry.get().replace(",","."))
+        #g = float(g_entry.get().replace(",","."))
         M = float(M_entry.get().replace(",","."))
-        R = float(R_entry.get().replace(",","."))
+        #R = float(R_entry.get().replace(",","."))
         varm = float(varm_entry.get().replace(",","."))
         T = float(T_entry.get().replace(",","."))
         a = float(a_entry.get().replace(",","."))
         s = float(s_entry.get().replace(",","."))
         FL = float(FL_entry.get().replace(",","."))
         F = float(F_entry.get().replace(",","."))
-        G = float(G_entry.get().replace(",","."))
+        #G = float(G_entry.get().replace(",","."))
         m = float(m_entry.get().replace(",","."))
         ME = float(ME_entry.get().replace(",","."))
-        e = float(e_entry.get().replace(",","."))
+        #e = float(e_entry.get().replace(",","."))
         r = float(r_entry.get().replace(",","."))
         ml = float(ml_entry.get().replace(",","."))
         mN = float(mN_entry.get().replace(",","."))
@@ -80,7 +82,20 @@ def calculator_main():
 
         g = (G * M)/(r*r)
 
+        dist = np.zeros()
         
+        for x in range(time.size-1):
+            time[x+1] = time[x] + dt
+            v = dp/dt
+            dist[x+1] = dist[x] + v * dt
+
+        plt.figure(figsize=(10, 6))
+        plt.plot(dist, time)
+        plt.xlabel('Zeit')
+        plt.ylabel('Distanz')
+        plt.title('Distanz-Zeit-Diagramm')
+        plt.tight_layout()
+        plt.show()
 
 
 
@@ -152,26 +167,32 @@ def calculator_main():
     h_entry = ctk.CTkEntry(calcapp)
     h_entry.grid(row=8, column=1)
 
+    """
     p0_label = ctk.CTkLabel(calcapp, text="Luftdichte:") #Luftdichte auf Meereshöhe
     p0_label.grid(row=9, column=0)
     p0_entry = ctk.CTkEntry(calcapp)
     p0_entry.grid(row=9, column=1)
+    """
 
+    """
     g_label = ctk.CTkLabel(calcapp, text="Erdbeschleunigung:") #Erdbeschleunigung
     g_label.grid(row=10, column=0)
     g_entry = ctk.CTkEntry(calcapp)
     g_entry.grid(row=10, column=1)
-
+    """
+    
     M_label = ctk.CTkLabel(calcapp, text="Die mittlere molare Masse der Luft:") #M die mittlere molare Masse der Luft
     M_label.grid(row=11, column=0)
     M_entry = ctk.CTkEntry(calcapp)
     M_entry.grid(row=11, column=1)
 
+    """
     R_label = ctk.CTkLabel(calcapp, text="Die allgemeine Gaskonstante:") #die allgemeine Gaskonstante
     R_label.grid(row=12, column=0)
     R_entry = ctk.CTkEntry(calcapp)
     R_entry.grid(row=12, column=1)
-
+    """
+    
     varm_label = ctk.CTkLabel(calcapp, text="Geschwindigkeit:") #Geschwindigkeit von Armstrong
     varm_label.grid(row=13, column=0)
     varm_entry = ctk.CTkEntry(calcapp)
@@ -202,11 +223,13 @@ def calculator_main():
     F_entry = ctk.CTkEntry(calcapp)
     F_entry.grid(row=18, column=1)
 
+    """
     G_label = ctk.CTkLabel(calcapp, text="Gravitationskonstante:") #Gravitationskonstante
     G_label.grid(row=19, column=0)
     G_entry = ctk.CTkEntry(calcapp)
     G_entry.grid(row=19, column=1)
-
+    """
+    
     m_label = ctk.CTkLabel(calcapp, text="Masse des Objekts:") #Masse des Objekts
     m_label.grid(row=20, column=0)
     m_entry = ctk.CTkEntry(calcapp)
@@ -217,11 +240,13 @@ def calculator_main():
     ME_entry = ctk.CTkEntry(calcapp)
     ME_entry.grid(row=21, column=1)
 
+    """
     e_label = ctk.CTkLabel(calcapp, text="konstante Exponentialfunktion:") #konstante Exponentialfunktion
     e_label.grid(row=22, column=0)
     e_entry = ctk.CTkEntry(calcapp)
     e_entry.grid(row=22, column=1)
-
+    """
+    
     r_label = ctk.CTkLabel(calcapp, text="Abstand Objekt bis Mittelpunkt zur Erde:") #Abstand Objekt bis Mittelpunkt zur Erde
     r_label.grid(row=23, column=0)
     r_entry = ctk.CTkEntry(calcapp)
