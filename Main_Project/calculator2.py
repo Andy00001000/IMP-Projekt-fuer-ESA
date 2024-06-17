@@ -4,12 +4,15 @@ import customtkinter as ctk
 import ctypes
 from tkinter import *
 from tkinter import messagebox
+from playsound import playsound
 
 def calculator_main():
 
     def error_win(error_titel, eror_message):
-        
+        for bark in range(1, 4):
+            playsound('C:/Users/andi.schmidt/Documents/Schule/IMP/Projekt/Main_Project/bark.wav')
         messagebox.showerror(error_titel, eror_message)
+        
 
 
 
@@ -72,10 +75,13 @@ def calculator_main():
                 plt.tight_layout()
                 plt.show()
                 #print("Done")
+                playsound('C:/Users/andi.schmidt/Documents/Schule/IMP/Projekt/Main_Project/bark.wav')
 
                 
 
             except:
+                for bark in range(1, 4):
+                    playsound('C:/Users/andi.schmidt/Documents/Schule/IMP/Projekt/Main_Project/bark.wav')
                 error_win("Value Error","Error calculating Value, likely due to invalid input")
 
 
@@ -130,7 +136,7 @@ def calculator_main():
     rho_entry.grid(row=3, column=1)
     """
 
-    A_label = ctk.CTkLabel(root, text="Geben sie die FLäche A der Rakete in m^2:")
+    A_label = ctk.CTkLabel(root, text="Geben sie die Fläche A der Rakete in m^2:")
     A_label.grid(row=4, column=0)
     A_entry = ctk.CTkEntry(root)
     A_entry.grid(row=4, column=1)
